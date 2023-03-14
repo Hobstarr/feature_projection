@@ -46,10 +46,26 @@ plt.ylabel('score')
 plt.xlabel('dimensions')
 plt.show()
 
+# PCA embedding
+pca = PCA(n_components = 2)
+pca_embedding = pca.fit_transform(x_train_small)
+
+plt.scatter(pca_embedding[:,0], pca_embedding[:,1], s = 0.3,
+            c = y_train_small, cmap = 'tab10')
+plt.title('PCA embedding of mnist digist')
+plt.tick_params(bottom=False, left=False, 
+                labelbottom = False, labelleft = False)
+plt.colorbar(boundaries=np.arange(11)-0.5).set_ticks(np.arange(10))
+plt.show()
+
+# UMAP embedding
 umapp = umap.UMAP()
 umap_embedding = umapp.fit_transform(x_train_small)
 
-plt.scatter(umap_embedding[:,0], umap_embedding[:,1])
+plt.scatter(umap_embedding[:,0], umap_embedding[:,1], s = 0.1,
+            c = y_train_small, cmap = 'tab10')
 plt.title('umap embedding of mnist digist')
-plt.axis('off')
+plt.tick_params(bottom=False, left=False, 
+                labelbottom = False, labelleft = False)
+plt.colorbar(boundaries=np.arange(11)-0.5).set_ticks(np.arange(10))
 plt.show()

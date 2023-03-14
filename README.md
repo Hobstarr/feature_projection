@@ -6,4 +6,5 @@ To run, cd into the directory you'd like to be in, either create a venv or run u
 
 `pip install -r requirements.txt`
 
-nb. ensure you have git and pip installed, this was written for python 3.10.x
+nb. ensure you have git and pip installed, this was written for python 3.7.x
+umap-learn may need python < 3.10.x
